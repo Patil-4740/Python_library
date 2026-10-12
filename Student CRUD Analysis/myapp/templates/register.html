@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="{% url 'register' %}" method="post">
+        {%csrf_token%}
+
+        <span>{{msg}}</span>
+
+        <label>First Name</label><br>
+        <input type="text" name="f_name" placeholder="First Name"><br>
+        <br>
+        
+        <label>Last Name</label><br>
+        <input type="text" name="l_name" placeholder="Last Name"><br>
+        <br>
+
+        <label>Username</label><br>
+        <input type="text" name="username" placeholder="Username"><br>
+        <br>
+
+        <label>Password</label><br>
+        <input type="text" name="password" placeholder="Password"><br>
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <a href="{% url 'login_user' %}">Login here.</a>
+</body>
+</html>
